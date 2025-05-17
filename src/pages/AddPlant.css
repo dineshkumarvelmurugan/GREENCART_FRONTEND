@@ -1,0 +1,92 @@
+.add-plant-form {
+  max-width: 600px;
+  margin: 15px auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.add-plant-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #256029;
+  font-size: 1.7rem;
+}
+
+/* Updated to ensure consistent sizing for ALL form elements */
+.add-plant-form input, 
+.add-plant-form textarea, 
+.add-plant-form select {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box; /* This ensures padding doesn't add to width */
+  transition: border-color 0.3s ease;
+}
+
+.add-plant-form input:focus, 
+.add-plant-form textarea:focus,
+.add-plant-form select:focus {
+  border-color: #66bb6a;
+  outline: none;
+  background-color: #f1fff6;
+}
+
+.add-plant-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.add-plant-form button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-plant-form button:hover {
+  background-color: #256029;
+}
+
+.success-message {
+  text-align: center;
+  background-color: #d1f7d1;
+  color: #256029;
+  padding: 0.8rem;
+  border: 1px solid #8bc48a;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lo {
+  text-align: center;
+  margin-top: 13px;
+}

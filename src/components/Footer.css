@@ -1,0 +1,86 @@
+.footer {
+  background-color: #eaf5ea;
+  color: #355e3b;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  border-top: 1px solid #c5e1c5;
+  margin-top: 2rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer .contact-info p,
+.footer .about-us p,
+.footer .business-hours p,
+.footer .quick-links ul {
+  margin: 0.3rem 0;
+}
+
+.footer .contact-info,
+.footer .about-us,
+.footer .business-hours,
+.footer .quick-links {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #3b7d3b;
+}
+
+.footer .quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .quick-links a {
+  color: #3b7d3b;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer .quick-links a:hover {
+  color: #4caf50;
+}
+
+.footer .socials a {
+  color: #3b7d3b;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer .socials a:hover {
+  color: #4caf50;
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #6a6a6a;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .contact-info,
+  .footer .about-us,
+  .footer .business-hours,
+  .footer .quick-links {
+    text-align: center;
+  }
+}
