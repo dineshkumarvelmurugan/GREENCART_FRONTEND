@@ -46,7 +46,7 @@ function Checkout() {
       totalAmount,
     }));
 
-    axios.get("http://localhost:5000/api/orders/next-id").then((res) => {
+    axios.get("https://greencart-backend-z9tq.onrender.com/api/orders/next-id").then((res) => {
       setFormData((prev) => ({ ...prev, orderId: res.data.nextOrderId }));
     });
   }, [cartItems, navigate, totalAmount]);
@@ -64,7 +64,7 @@ function Checkout() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/orders/create", formData);
+      await axios.post("https://greencart-backend-z9tq.onrender.com/api/orders/create", formData);
       setMessage("🎉 Order placed successfully!");
       setOrderPlaced(true);
       setShowPdfConfirmation(true);

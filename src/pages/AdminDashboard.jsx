@@ -36,7 +36,7 @@ const AdminDashboard = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await fetch("http://localhost:5000/api/admin/dashboard-summary");
+        const res = await fetch("https://greencart-backend-z9tq.onrender.com/api/admin/dashboard-summary");
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         }

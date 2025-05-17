@@ -45,8 +45,8 @@ function MyOrders({ user: propUser, isAdmin: propIsAdmin }) {
       }
 
       const url = isAdmin
-        ? 'http://localhost:5000/api/orders'
-        : `http://localhost:5000/api/orders/user/${user.username}`;
+        ? 'https://greencart-backend-z9tq.onrender.com/api/orders'
+        : `https://greencart-backend-z9tq.onrender.com/api/orders/user/${user.username}`;
 
       const res = await axios.get(url);
 
@@ -67,7 +67,7 @@ function MyOrders({ user: propUser, isAdmin: propIsAdmin }) {
   // Add the updateStatus function
   const updateStatus = async (orderId, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/update-status/${orderId}`, {
+      await axios.put(`https://greencart-backend-z9tq.onrender.com/api/orders/update-status/${orderId}`, {
         status: newStatus,
       });
 
@@ -91,7 +91,7 @@ function MyOrders({ user: propUser, isAdmin: propIsAdmin }) {
   // Handle actual deletion when confirmed in modal
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/orders/${deleteId}`);
+      await axios.delete(`https://greencart-backend-z9tq.onrender.com/api/orders/${deleteId}`);
       fetchOrders();
       setDeleteId(null); // Close modal after successful deletion
     } catch (error) {

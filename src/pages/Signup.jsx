@@ -18,7 +18,7 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/users/signup', form);
+      await axios.post('https://greencart-backend-z9tq.onrender.com/api/users/signup', form);
       alert('Signup successful!');
     } catch (err) {
       alert('Signup failed');

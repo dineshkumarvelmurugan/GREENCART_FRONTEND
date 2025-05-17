@@ -19,7 +19,7 @@ function Cart() {
     }
 
     axios
-      .get(`http://localhost:5000/api/cart/${user._id}`)
+      .get(`https://greencart-backend-z9tq.onrender.com/api/cart/${user._id}`)
       .then((res) => {
         const validItems = res.data.filter((item) => item.plant !== null);
         setCartItems(validItems);
@@ -29,7 +29,7 @@ function Cart() {
 
   const handleRemove = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/cart/${id}`);
+      await axios.delete(`https://greencart-backend-z9tq.onrender.com/api/cart/${id}`);
       setCartItems((prev) => prev.filter((item) => item._id !== id));
     } catch (err) {
       console.error("Error removing from cart:", err);
@@ -46,7 +46,7 @@ function Cart() {
     setCartItems(updatedCartItems);
 
     try {
-      await axios.put(`http://localhost:5000/api/cart/${id}`, {
+      await axios.put(`https://greencart-backend-z9tq.onrender.com/api/cart/${id}`, {
         quantity: updatedCartItems.find((item) => item._id === id).quantity,
       });
     } catch (err) {
@@ -64,7 +64,7 @@ function Cart() {
     setCartItems(updatedCartItems);
 
     try {
-      await axios.put(`http://localhost:5000/api/cart/${id}`, {
+      await axios.put(`https://greencart-backend-z9tq.onrender.com/api/cart/${id}`, {
         quantity: updatedCartItems.find((item) => item._id === id).quantity,
       });
     } catch (err) {

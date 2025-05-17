@@ -23,7 +23,7 @@ function Plants() {
     }, []);
 
     const fetchPlants = () => {
-        axios.get('http://localhost:5000/api/plants')
+        axios.get('https://greencart-backend-z9tq.onrender.com/api/plants')
             .then(res => setPlants(res.data))
             .catch(err => console.error(err));
     };
@@ -42,7 +42,7 @@ function Plants() {
         }
 
         try {
-            await axios.post('http://localhost:5000/api/cart', {
+            await axios.post('https://greencart-backend-z9tq.onrender.com/api/cart', {
                 userId: user._id,
                 plantId: plant._id
             });
@@ -72,7 +72,7 @@ function Plants() {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:5000/api/plants/${deleteId}`);
+            await axios.delete(`https://greencart-backend-z9tq.onrender.com/api/plants/${deleteId}`);
             setPlants(plants.filter(p => p._id !== deleteId));
             setSuccessMessage('✅ Plant deleted successfully!');
         } catch (err) {

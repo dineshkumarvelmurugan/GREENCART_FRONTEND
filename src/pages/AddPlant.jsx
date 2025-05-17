@@ -26,7 +26,7 @@ const AddPlant = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:5000/api/plants', plant);
+      await axios.post('https://greencart-backend-z9tq.onrender.com/api/plants', plant);
       setMessage("✅ Plant added successfully!");
       setPlant({ name: '', price: '', image: '', description: '', category: '', stock: 0 });
 

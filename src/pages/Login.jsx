@@ -28,7 +28,7 @@ function Login({ setUser }) {
 
     if (isSignup) {
       try {
-        const res = await axios.post('http://localhost:5000/api/users/signup', formData);
+        const res = await axios.post('https://greencart-backend-z9tq.onrender.com/api/users/signup', formData);
         setSuccess('✅ Signup successful! Please login.');
         setTimeout(() => setSuccess(''), 3000);
         setIsSignup(false);
@@ -42,7 +42,7 @@ function Login({ setUser }) {
       }
     } else {
       try {
-        const res = await axios.post('http://localhost:5000/api/users/login', {
+        const res = await axios.post('https://greencart-backend-z9tq.onrender.com/api/users/login', {
           username: formData.username,
           password: formData.password
         });
