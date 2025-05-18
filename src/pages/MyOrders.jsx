@@ -14,15 +14,13 @@ function MyOrders({ user: propUser, isAdmin: propIsAdmin }) {
   const [endDate, setEndDate] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [deleteId, setDeleteId] = useState(null); // For modal confirmation
+  const [deleteId, setDeleteId] = useState(null); 
   const ordersPerPage = 8;
 
-  // Get user from localStorage if not provided as prop
   const localUser = React.useMemo(() => {
     return JSON.parse(localStorage.getItem('user')) || {};
   }, []);
 
-  // Use prop values if provided, otherwise use localStorage values
   const user = propUser || localUser;
   const isAdmin = propIsAdmin !== undefined ? propIsAdmin : localUser.isAdmin === true;
 
@@ -50,7 +48,6 @@ function MyOrders({ user: propUser, isAdmin: propIsAdmin }) {
 
       const res = await axios.get(url);
 
-      // Sort orders by creation date (newest first)
       const sortedOrders = res.data.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
@@ -64,14 +61,12 @@ function MyOrders({ user: propUser, isAdmin: propIsAdmin }) {
     }
   };
 
-  // Add the updateStatus function
   const updateStatus = async (orderId, newStatus) => {
     try {
       await axios.put(`https://greencart-backend-z9tq.onrender.com/api/orders/update-status/${orderId}`, {
         status: newStatus,
       });
 
-      // Update the orders state with the new status
       const updatedOrders = orders.map(order =>
         order._id === orderId ? { ...order, status: newStatus } : order
       );
@@ -83,17 +78,15 @@ function MyOrders({ user: propUser, isAdmin: propIsAdmin }) {
     }
   };
 
-  // Updated delete flow to use modal instead of alert
   const confirmDelete = (id) => {
-    setDeleteId(id); // This will show the modal
+    setDeleteId(id); 
   };
 
-  // Handle actual deletion when confirmed in modal
   const handleDelete = async () => {
     try {
       await axios.delete(`https://greencart-backend-z9tq.onrender.com/api/orders/${deleteId}`);
       fetchOrders();
-      setDeleteId(null); // Close modal after successful deletion
+      setDeleteId(null); 
     } catch (error) {
       console.error("Error deleting order:", error);
       alert("Failed to delete order");
@@ -239,7 +232,6 @@ function MyOrders({ user: propUser, isAdmin: propIsAdmin }) {
             </button>
           </div>
           
-          {/* Modal-like Delete Confirmation (not using alert) */}
           {deleteId && (
             <div className="modal-overlay">
               <div className="modal">

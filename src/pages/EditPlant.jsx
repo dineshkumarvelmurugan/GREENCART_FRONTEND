@@ -13,7 +13,7 @@ function EditPlant() {
     description: plant.description,
     image: plant.image,
     category: plant.category || '',
-    stock: plant.stock || 0, // Adding stock with default value
+    stock: plant.stock || 0,
   });
 
   const [message, setMessage] = useState('');

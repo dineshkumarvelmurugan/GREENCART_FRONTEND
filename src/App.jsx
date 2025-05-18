@@ -12,7 +12,7 @@ import UserDetails from './components/AllUsers';
 import Checkout from './components/Checkout';
 import MyOrdersPage from './pages/MyOrders';
 import EditProfile from './pages/EditProfile';
-import AdminDashboard from './pages/AdminDashboard'; // ✅ Import added
+import AdminDashboard from './pages/AdminDashboard'; 
 
 import { useEffect, useState } from 'react';
 
